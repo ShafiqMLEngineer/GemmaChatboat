@@ -1,11 +1,14 @@
 from transformers import AutoTokenizer, AutoModelForCausalLM
 import streamlit as st
 import torch
+import transformers
+
 
 st.set_page_config(page_title="Gemma ChatBoat")
 
 st.title("🤖 Gemma ChatBoat")
-
+st.write("Transformers:", transformers.__version__)
+st.write("Torch:", torch.__version__)
 
 @st.cache_resource
 def load_model():
@@ -45,7 +48,7 @@ if user_input:
 
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=40,
+                max_new_tokens=50,
                 do_sample=False,
                 pad_token_id=tokenizer.eos_token_id,
                 eos_token_id=tokenizer.eos_token_id,
