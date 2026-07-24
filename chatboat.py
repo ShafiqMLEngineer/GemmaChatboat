@@ -10,7 +10,7 @@ st.title("🤖 Gemma ChatBoat")
 st.write("Transformers:", transformers.__version__)
 st.write("Torch:", torch.__version__)
 
-@st.cache_resource
+# @st.cache_resource
 def load_model():
     tokenizer = AutoTokenizer.from_pretrained("shafiq433/GemmaChatBoat")
 
@@ -48,7 +48,7 @@ if user_input:
 
             outputs = model.generate(
                 **inputs,
-                max_new_tokens=25,
+                max_new_tokens=40,
                 do_sample=False,
                 pad_token_id=tokenizer.eos_token_id,
                 eos_token_id=tokenizer.eos_token_id,
