@@ -12,6 +12,7 @@ A conversational AI chatbot fine-tuned on a custom interview Q&A dataset using *
 - Validation & Perplexity Evaluation
 - Hugging Face Hub Deployment
 - and GUI Deploy on Streamlit Cloud
+- https://gemmachatboat.streamlit.app/
 ---
 
 ## 🛠️ Tech Stack
